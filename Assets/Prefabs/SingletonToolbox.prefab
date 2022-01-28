@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplayWindow: {fileID: 5218918413545169214}
+  textNextButton: {fileID: 5218918412304192857}
   textMesh: {fileID: 5218918413714068776}
 --- !u!114 &7959218101368833966
 MonoBehaviour:
@@ -664,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5218918412304192862
 RectTransform:
   m_ObjectHideFlags: 0
