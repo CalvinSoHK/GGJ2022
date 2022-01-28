@@ -12,12 +12,24 @@ namespace UI.TextDisplay
         private GameObject textDisplayWindow;
 
         [SerializeField]
+        private GameObject textNextButton;
+
+        [SerializeField]
         private TextMeshProUGUI textMesh;
 
         /// <summary>
         /// Text to display queue
         /// </summary>
         private Queue<string> textQueue = new Queue<string>();
+
+        private bool animatingText = false; // diplaying the letters in text
+        private string fullText = ""; // reference to the complete string to be displayed
+        private string currentText = ""; //reference that holds letters from full text
+        private int currentTextIndex = 0; //index of which char from fullText to display next
+        private float letterTimer = 0f; // current time between letters
+
+        [SerializeField] //amount of time between each letter
+        private float letterTimerMax = 0.05f;
 
         private void OnEnable()
         {
@@ -37,6 +49,7 @@ namespace UI.TextDisplay
             }
             else if (id.Equals(MessageQueueID.UI))
             {
+                textNextButton.SetActive(false);
                 if (message.Equals("ContinueText"))
                 {
                     ProcessNext();
@@ -53,7 +66,13 @@ namespace UI.TextDisplay
             textQueue.Enqueue(message);
             if (!textDisplayWindow.activeSelf && textQueue.Count > 0)
             {
-                textMesh.text = textQueue.Dequeue();
+                animatingText = true;
+                fullText = textQueue.Dequeue();
+                currentText = "";
+                currentTextIndex = 0;
+                letterTimer = 0;
+
+                //textMesh.text = textQueue.Dequeue();
                 textDisplayWindow.SetActive(true);
             }
         }
@@ -67,12 +86,76 @@ namespace UI.TextDisplay
             //If we can still dequeue new content, do so and set the text
             if (textQueue.Count > 0)
             {
-                textMesh.text = textQueue.Dequeue();
+                animatingText = true;
+                fullText = textQueue.Dequeue();
+                currentText = "";
+                currentTextIndex = 0;
+                letterTimer = 0;
+                //textMesh.text = textQueue.Dequeue();
             }
             else
             {
                 textDisplayWindow.SetActive(false);
             }
+        }
+
+        void Update()
+        {
+            ProgressivellyShowText();
+        }
+
+        /// <summary>
+        /// Displays one letter at a time the last message to be dequeued
+        /// </summary>
+        private void ProgressivellyShowText()
+        {
+            if (animatingText)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ShowFullText();
+                }
+                else
+                {
+                    letterTimer += Time.deltaTime;
+                    if (letterTimer >= letterTimerMax)
+                    {
+                        DisplayNextLetter();
+                        letterTimer = 0f;
+                    }
+                }
+
+
+
+            }
+        }
+
+        /// <summary>
+        /// adds next letter from the message
+        /// </summary>
+        private void DisplayNextLetter()
+        {
+            if (currentTextIndex < fullText.Length)
+            {
+                currentText += fullText[currentTextIndex];
+                textMesh.text = currentText;
+                currentTextIndex += 1;
+            }
+            else
+            {
+                ShowFullText();
+            }
+            
+        }
+
+        /// <summary>
+        /// shows the message in full and activates the next button
+        /// </summary>
+        private void ShowFullText()
+        {
+            textMesh.text = fullText;
+            animatingText = false;
+            textNextButton.SetActive(true);
         }
 
     }
