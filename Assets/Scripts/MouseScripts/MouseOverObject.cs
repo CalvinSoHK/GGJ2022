@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
+ *  base used: 
  *  https://answers.unity.com/questions/547513/how-do-i-detect-when-mouse-passes-over-an-object.html
  * 
  */
@@ -13,6 +14,8 @@ public class MouseOverObject : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    private GameObject currentHoveredObject;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +23,21 @@ public class MouseOverObject : MonoBehaviour
         
         if(Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.collider.name);
+            if(hit.collider.tag.Equals("Character"))
+            {
+                currentHoveredObject = hit.collider.gameObject;
+                currentHoveredObject.GetComponent<CharacterManager>().ActivateOutline(true);
+            }
+            else if(currentHoveredObject != null)
+            {
+                currentHoveredObject.GetComponent<CharacterManager>().ActivateOutline(false);
+                currentHoveredObject = null;
+            }
+        }
+        else if (currentHoveredObject != null)
+        {
+            currentHoveredObject.GetComponent<CharacterManager>().ActivateOutline(false);
+            currentHoveredObject = null;
         }
     }
 }
