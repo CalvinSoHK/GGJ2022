@@ -15,7 +15,13 @@ public class LoadingManager : MonoBehaviour
     void Start()
     {
         //start async operation
-        key = LoadingSingleton.Loading_Instance.getNextSceneToLoad();
+        LoadingSingleton loading = Singleton.Instance.GetComponent<LoadingSingleton>();
+        if (loading == null)
+        {
+            throw new System.Exception("QueueMessageEvent Error: No LoadingSingleton on Singleton instance: " + Singleton.Instance.name);
+        }
+
+        key = loading.getNextSceneToLoad();
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadingSingleton : MonoBehaviour
 {
 
-    public static LoadingSingleton Loading_Instance = new LoadingSingleton();
+    //public static LoadingSingleton Loading_Instance = new LoadingSingleton();
     int nextSceneToLoad = 1;
     // Start is called before the first frame update
     void Start()
