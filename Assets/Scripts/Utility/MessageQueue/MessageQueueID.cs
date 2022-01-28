@@ -16,6 +16,8 @@ namespace Utility.MessageQueue
 
         public static string UI = "UI";
 
+        public static string SCENE_LOAD = "SceneLoad";
+
         //Here is the list of queues that are setup
 
         public static List<string> IDList = new List<string>()
@@ -23,7 +25,8 @@ namespace Utility.MessageQueue
             GAMESTATE,
             DIALOGUE,
             SELECTION,
-            UI
+            UI,
+            SCENE_LOAD
         };
     }
 }

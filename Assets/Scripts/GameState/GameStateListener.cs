@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utility.MessageQueue;
 
@@ -24,7 +22,9 @@ namespace Listener
             {
                 if (msg.Equals("START"))
                 {
-                    Debug.LogWarning("Not doing anything with start yet.");
+                    Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                        MessageQueueID.SCENE_LOAD,
+                        "2");
                 }
                 else if (msg.Equals("EXIT"))
                 {
@@ -32,5 +32,7 @@ namespace Listener
                 }
             }
         }
+
+        
     }
 }

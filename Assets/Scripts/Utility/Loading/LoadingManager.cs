@@ -21,7 +21,7 @@ public class LoadingManager : MonoBehaviour
             throw new System.Exception("QueueMessageEvent Error: No LoadingSingleton on Singleton instance: " + Singleton.Instance.name);
         }
 
-        key = loading.getNextSceneToLoad();
+        key = loading.GetNextSceneToLoad();
     }
 
     // Update is called once per frame

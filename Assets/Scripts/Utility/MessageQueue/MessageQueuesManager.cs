@@ -51,7 +51,9 @@ namespace Utility.MessageQueue
                     queue.TryQueueMessage(message);
                     return true;
                 }
+                return false;
             }
+            Debug.LogError("MessageQueuesManager Error: Unable to find queue with given id: " + id);
             return false;
         }
 
