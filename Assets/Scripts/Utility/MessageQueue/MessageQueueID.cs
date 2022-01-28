@@ -18,6 +18,8 @@ namespace Utility.MessageQueue
 
         public static string SCENE_LOAD = "SceneLoad";
 
+        public static string CAMERA = "Camera";
+
         //Here is the list of queues that are setup
 
         public static List<string> IDList = new List<string>()
@@ -26,7 +28,8 @@ namespace Utility.MessageQueue
             DIALOGUE,
             SELECTION,
             UI,
-            SCENE_LOAD
+            SCENE_LOAD,
+            CAMERA
         };
     }
 }

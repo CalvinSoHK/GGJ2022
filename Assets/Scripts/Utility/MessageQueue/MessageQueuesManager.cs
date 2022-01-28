@@ -80,8 +80,8 @@ namespace Utility.MessageQueue
             return false;
         }
 
-        // Start is called before the first frame update
-        void Start()
+        // Awake. Has to happen before start, and should only happen once
+        void Awake()
         {
             //Make a queue for each ID in the list
             foreach(string id in MessageQueueID.IDList)

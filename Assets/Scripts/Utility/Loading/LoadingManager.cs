@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utility.MessageQueue;
 
 public class LoadingManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class LoadingManager : MonoBehaviour
     int key = 0;
     float timer = 0;
     bool timerGoing = true;
+
+    public static string SCENELOAD_MSG_PREFIX = "SceneLoad/";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,10 @@ public class LoadingManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Async operation to load the scene.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LoadAsyncOperation()
     {
         AsyncOperation gameLevel = SceneManager.LoadSceneAsync(key);
@@ -47,5 +55,10 @@ public class LoadingManager : MonoBehaviour
             _progressBar.value = gameLevel.progress;
             yield return new WaitForEndOfFrame();
         }
+
+        //Queue a message that scene is loaded in case we need to do stuff with it
+        Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+            MessageQueueID.GAMESTATE,
+            SCENELOAD_MSG_PREFIX + key);
     }
 }
