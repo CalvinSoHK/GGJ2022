@@ -16,6 +16,8 @@ namespace Utility.MessageQueue
 
         public static string UI = "UI";
 
+        public static string METER = "Meter";
+
         public static string SCENE_LOAD = "SceneLoad";
 
         public static string CAMERA = "Camera";
@@ -29,7 +31,8 @@ namespace Utility.MessageQueue
             SELECTION,
             UI,
             SCENE_LOAD,
-            CAMERA
+            CAMERA,
+            METER
         };
     }
 }

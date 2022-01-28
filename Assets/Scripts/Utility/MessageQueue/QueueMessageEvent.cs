@@ -27,5 +27,15 @@ namespace Event
                 manager.TryQueueMessage(info.ID, info.Message);
             }
         }
+
+        /// <summary>
+        /// Adds a new message to the list through code
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="msg"></param>
+        public void AddMessage(string id, string msg)
+        {
+            messageInfoList.Add(new MessageInfo(id, msg));
+        }
     }
 }

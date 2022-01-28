@@ -36,5 +36,16 @@ namespace Utility.MessageQueue
                 return message;
             }
         }
+
+        /// <summary>
+        /// Constructor sets both values with given inputs
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <param name="_message"></param>
+        public MessageInfo(string _id, string _message)
+        {
+            id = _id;
+            message = _message;
+        }
     }
 }
