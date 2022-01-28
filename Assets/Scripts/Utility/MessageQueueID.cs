@@ -14,13 +14,16 @@ namespace Utility.MessageQueue
 
         public static string SELECTION = "Selection";
 
+        public static string UI = "UI";
+
         //Here is the list of queues that are setup
 
         public static List<string> IDList = new List<string>()
         {
             GAMESTATE,
             DIALOGUE,
-            SELECTION
+            SELECTION,
+            UI
         };
     }
 }

@@ -7,13 +7,8 @@ namespace Event
 {
     public class QueueMessageEvent : MonoBehaviour
     {
-        [Tooltip("ID of the queue we want to send the message to.")]
         [SerializeField]
-        private string id;
-
-        [Tooltip("Message that we want to put through the queue.")]
-        [SerializeField]
-        private string message;
+        private List<MessageInfo> messageInfoList = new List<MessageInfo>();
 
         /// <summary>
         /// Public function to queue the inputted message.
@@ -27,7 +22,10 @@ namespace Event
                 throw new System.Exception("QueueMessageEvent Error: No MessageQueuesManager on Singleton instance: " + Singleton.Instance.name);
             }
 
-            manager.TryQueueMessage(id, message);
+            foreach(MessageInfo info in messageInfoList)
+            {
+                manager.TryQueueMessage(info.ID, info.Message);
+            }
         }
     }
 }
