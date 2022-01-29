@@ -31,8 +31,6 @@ namespace Listener
                     Application.Quit();
                 }
             }
-        }
-
-        
+        }   
     }
 }

@@ -1,4 +1,5 @@
 using CameraManagement;
+using ChoiceManagement;
 using Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -80,8 +81,15 @@ namespace UI.TextDisplay
                 //textMesh.text = textQueue.Dequeue();
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
                     MessageQueueID.UI,
-                    "MouseInactive"
+                    InvestigationManager.MOUSE_INACTIVE_MESSAGE
                     );
+
+                //Turn the choice window back on
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.UI,
+                    ChoiceWindowController.HIDE_CHOICE
+                    );
+
                 textDisplayWindow.SetActive(true);
             }
         }
@@ -110,7 +118,7 @@ namespace UI.TextDisplay
                 //Activate mouse investigation
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
                     MessageQueueID.UI,
-                    MouseManager.MOUSE_ACTIVE_MESSAGE
+                    InvestigationManager.MOUSE_ACTIVE_MESSAGE
                     );
 
                 //Reset the camera's position
@@ -121,8 +129,14 @@ namespace UI.TextDisplay
 
                 //Reset the post process add volume
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
-                    MessageQueueID.POSTPROCESS,
+                    MessageQueueID.UI,
                     VolumeController.RESET_MESSAGE
+                    );
+
+                //Turn the choice window back on
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.UI,
+                    ChoiceWindowController.SHOW_CHOICE
                     );
             }
         }

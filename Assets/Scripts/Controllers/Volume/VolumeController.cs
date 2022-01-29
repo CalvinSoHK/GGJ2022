@@ -62,16 +62,16 @@ namespace VolumeManagement
 
         private void HandleMessage(string id, string msg)
         {
-            if (id.Equals(MessageQueueID.POSTPROCESS))
+            if (id.Equals(MessageQueueID.UI))
             {
                 if (msg.Equals(RESET_MESSAGE))
                 {
                     ResetVolume();
                 }
-                else //It is the message object
-                {
-                    ProcessMessage(msg);
-                }
+            }
+            else if (id.Equals(MessageQueueID.POSTPROCESS))
+            {
+                ProcessMessage(msg);
             }
         }
 

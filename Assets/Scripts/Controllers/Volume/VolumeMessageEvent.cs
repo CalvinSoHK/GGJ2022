@@ -28,16 +28,22 @@ namespace VolumeManagement
         [SerializeField]
         private UnityEvent endEvent;
 
+        [SerializeField]
+        private bool AddToQueueMessageEvent = true;
+
         private void Start()
         {
-            GetComponent<QueueMessageEvent>().AddMessage(
-                MessageQueueID.POSTPROCESS,
-                JsonUtility.ToJson(new VolumeMessageObject(
-                    targetProfilePath,
-                    targetWeight,
-                    smoothTime,
-                    endEvent)
-                ));
+            if (AddToQueueMessageEvent)
+            {
+                GetComponent<QueueMessageEvent>().AddMessage(
+                    MessageQueueID.POSTPROCESS,
+                    JsonUtility.ToJson(new VolumeMessageObject(
+                        targetProfilePath,
+                        targetWeight,
+                        smoothTime,
+                        endEvent)
+                    ));
+            }
         }
 
         public void QueueMessage()
