@@ -8,6 +8,9 @@ using UnityEngine;
 public class PositionSmoothDampener : MonoBehaviour
 {
     [SerializeField]
+    private Transform targetTransform;
+
+    [SerializeField]
     private Vector3 targetPos = Vector3.zero;
     [SerializeField]
     private Quaternion targetRot = Quaternion.identity;
@@ -31,6 +34,11 @@ public class PositionSmoothDampener : MonoBehaviour
     /// </summary>
     public void SmoothToPosition()
     {
+        if(targetTransform == null)
+        {
+            targetTransform = transform;
+        }
+
         StartCoroutine(SmoothToPositionCoroutine());
     }
 
@@ -48,14 +56,19 @@ public class PositionSmoothDampener : MonoBehaviour
         //Move to target position until broken or we reach the position
         while (!breakCoroutine)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref refPosVelocity, positionSmoothTime);
+            targetTransform.position = Vector3.SmoothDamp(targetTransform.position, targetPos, ref refPosVelocity, positionSmoothTime);
 
-            float delta = Quaternion.Angle(transform.rotation, targetRot);
+            float delta = Quaternion.Angle(targetTransform.rotation, targetRot);
             if (delta > 0f)
             {
                 float t = Mathf.SmoothDampAngle(delta, 0.0f, ref refRotVelocity, rotationSmoothTime);
                 t = 1.0f - (t / delta);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, t);
+                targetTransform.rotation = Quaternion.Slerp(targetTransform.rotation, targetRot, t);
+            }
+
+            if(Vector3.Distance(targetTransform.position, targetPos) <= 0.01f)
+            {
+                break;
             }
 
             yield return new WaitForEndOfFrame();

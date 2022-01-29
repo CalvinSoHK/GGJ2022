@@ -8,8 +8,7 @@ using Utility.MessageQueue;
 using UnityEngine.Events;
 
 namespace VolumeManagement
-{
-    [RequireComponent(typeof(QueueMessageEvent))]
+{ 
     public class VolumeMessageEvent : MonoBehaviour
     {
         [Tooltip("Target volume profile we want to use")]

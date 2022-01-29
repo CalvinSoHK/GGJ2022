@@ -9,7 +9,6 @@ namespace CameraManagement
     /// <summary>
     /// At run time adds a message event with the JSON to cause a camera movement
     /// </summary>
-    [RequireComponent(typeof(QueueMessageEvent))]
     public class CameraMessageEvent : MonoBehaviour
     {
         [Tooltip("Instead of setting values you can pass in a transform")]
