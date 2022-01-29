@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility.MessageQueue;
 
 public class MovePiecesIntoPlace : MonoBehaviour
 {
@@ -19,6 +20,17 @@ public class MovePiecesIntoPlace : MonoBehaviour
 
     // Time when the movement started.
     private float startTime;
+
+    private void OnEnable()
+    {
+        MessageQueuesManager.MessagePopEvent += HandleMessage;
+    }
+
+    private void OnDisable()
+    {
+        MessageQueuesManager.MessagePopEvent -= HandleMessage;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -137,5 +149,21 @@ public class MovePiecesIntoPlace : MonoBehaviour
         //update the state and the time since the state has been changes
         currentState = state;
         //lastStateChange = Time.time;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="msg"></param>
+    private void HandleMessage(string id, string msg)
+    {
+        if (id.Equals(MessageQueueID.GAMESTATE))
+        {
+            if (msg.Equals("Choose"))
+            {
+                setCurrentState(PieceState.MovingOut);
+            }
+        }
     }
 }

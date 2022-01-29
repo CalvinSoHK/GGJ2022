@@ -11,7 +11,10 @@ using Utility.MessageQueue;
  */
 namespace Player
 {
-    public class MouseManager : MonoBehaviour
+    /// <summary>
+    /// Lets us investigate in the scene
+    /// </summary>
+    public class InvestigationManager : MonoBehaviour
     {
         [SerializeField]
         private Camera playerCamera;

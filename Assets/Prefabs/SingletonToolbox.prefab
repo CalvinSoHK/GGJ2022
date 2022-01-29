@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4991468335331186366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 5218918412223131668}
   - component: {fileID: 7959218101368833966}
   - component: {fileID: 4755123629692026280}
+  - component: {fileID: 47095417202267687}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -763,6 +764,7 @@ RectTransform:
   - {fileID: 5218918413545169215}
   - {fileID: 2225905675389912219}
   - {fileID: 4991468335331186366}
+  - {fileID: 4824621219185268328}
   m_Father: {fileID: 5218918413585249603}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -887,6 +889,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choiceWindow: {fileID: 3364105957133051099}
+--- !u!114 &47095417202267687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218918412223131666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5e71a0be9db3144b41840e5c66daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countWindow: {fileID: 8545267401061988889}
+  countPrefab1: {fileID: 6184975844233551479, guid: c1e64c3771b0bba489e13887d249e975, type: 3}
+  countPrefab2: {fileID: 6184975844233551479, guid: c1e64c3771b0bba489e13887d249e975, type: 3}
+  targetTransform: {fileID: 4824621219185268328}
+  smoothTime: 0.3
 --- !u!1 &5218918412304192857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,3 +2388,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetVolume: {fileID: 7017556774165928628}
+--- !u!1 &8545267401061988889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4824621219185268328}
+  m_Layer: 0
+  m_Name: CountWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4824621219185268328
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545267401061988889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5218918412223131667}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

@@ -36,6 +36,8 @@ namespace CameraManagement
 
         public static string RESET_MESSAGE = "ResetCamera";
 
+        public static string COMPLETE_MESSAGE = "CameraComplete";
+
         private void OnEnable()
         {
             MessageQueuesManager.MessagePopEvent += HandleMessage;
@@ -123,6 +125,17 @@ namespace CameraManagement
                     float t = Mathf.SmoothDampAngle(delta, 0.0f, ref refRotVelocity, rotationSmoothTime);
                     t = 1.0f - (t / delta);
                     transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, t);
+                }
+
+                //Terminate coroutine if we are close enough
+                if(Vector3.Distance(transform.position, targetPos) <= 0.01f)
+                {
+                    //Message that we finished camera move
+                    Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                        MessageQueueID.GAMESTATE,
+                        COMPLETE_MESSAGE
+                        );
+                    break;
                 }
 
                 yield return new WaitForEndOfFrame();
