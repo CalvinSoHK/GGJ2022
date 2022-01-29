@@ -9,6 +9,9 @@ public class MovePiecesIntoPlace : MonoBehaviour
     public List<Vector3> childrenEndPosition = new List<Vector3>();
     public List<Vector3> childrenStartPosition = new List<Vector3>();
 
+    public enum PieceState { Idle, MovingIn, MovingOut }; //list of the different states the moving pieces can be in
+    public PieceState currentState; //keeps track of the state the pieces are currently in
+
     public Vector2 randomizeDistance;
 
     // Movement speed in units per second.
@@ -17,12 +20,12 @@ public class MovePiecesIntoPlace : MonoBehaviour
     // Time when the movement started.
     private float startTime;
 
-
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
         getAllRelevantChildren();
+        setCurrentState(PieceState.MovingIn);
     }
 
     // Update is called once per frame
@@ -30,19 +33,77 @@ public class MovePiecesIntoPlace : MonoBehaviour
     {
         // Distance moved equals elapsed time times speed..
         float distCovered = (Time.time - startTime) * speed;
+        var stillActive = false;
 
-        for(var i = 0; i < children.Count; i ++)
+        switch(currentState)
         {
-            if(!children[i].activeSelf)
-            {
-                children[i].SetActive(true);
-            }
-            // Fraction of journey completed equals current distance divided by total distance.
-            float fractionOfJourney = distCovered / Vector3.Distance(childrenStartPosition[i], childrenEndPosition[i]); ;
+            case PieceState.Idle:
 
-            // Set our position as a fraction of the distance between the markers.
-            children[i].transform.position = Vector3.Lerp(childrenStartPosition[i], childrenEndPosition[i], fractionOfJourney);
+                break;
+
+            case PieceState.MovingIn:
+
+                for (var i = 0; i < children.Count; i++)
+                {
+                    if (!children[i].activeSelf)
+                    {
+                        children[i].SetActive(true);
+                    }
+                    // Fraction of journey completed equals current distance divided by total distance.
+                    float fractionOfJourney = distCovered / Vector3.Distance(childrenStartPosition[i], childrenEndPosition[i]);
+
+                    // Set our position as a fraction of the distance between the markers.
+                    children[i].transform.position = Vector3.Lerp(childrenStartPosition[i], childrenEndPosition[i], fractionOfJourney);
+
+                    if(fractionOfJourney < 1 && !stillActive)
+                    {
+                        stillActive = true;
+                    }
+                }
+
+                if (!stillActive)
+                {
+                    setCurrentState(PieceState.Idle);
+                }
+
+                break;
+
+            case PieceState.MovingOut:
+                for (var i = 0; i < children.Count; i++)
+                {
+                    // Fraction of journey completed equals current distance divided by total distance.
+                    float fractionOfJourney = distCovered / Vector3.Distance(childrenStartPosition[i], childrenEndPosition[i]);
+
+                    // Set our position as a fraction of the distance between the markers.
+                    children[i].transform.position = Vector3.Lerp(childrenEndPosition[i], childrenStartPosition[i], fractionOfJourney);
+
+                    if (fractionOfJourney >= 1)
+                    {
+                        children[i].SetActive(false);
+                    }
+
+                    if(children[i].activeSelf && !stillActive)
+                    {
+                        stillActive = true;
+                    }
+                }
+
+                if(!stillActive)
+                {
+                    setCurrentState(PieceState.Idle);
+                }
+
+                break;
         }
+
+  
+
+        if(Input.GetKeyDown("space"))
+        {
+            setCurrentState(PieceState.MovingOut);
+        }
+
+       
     }
 
     void getAllRelevantChildren()
@@ -62,5 +123,19 @@ public class MovePiecesIntoPlace : MonoBehaviour
                 grandChild.gameObject.SetActive(false);
             }
         }
+    }
+
+    /// <summary>
+    /// sets the current state of the game manager
+    /// </summary>
+    /// <param name="state"></param>
+    public void setCurrentState(PieceState state)
+    {
+
+        startTime = 0f;
+        startTime = Time.time;
+        //update the state and the time since the state has been changes
+        currentState = state;
+        //lastStateChange = Time.time;
     }
 }
