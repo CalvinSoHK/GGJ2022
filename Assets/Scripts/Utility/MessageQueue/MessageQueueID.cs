@@ -22,6 +22,8 @@ namespace Utility.MessageQueue
 
         public static string CAMERA = "Camera";
 
+        public static string POSTPROCESS = "PostProcess";
+
         //Here is the list of queues that are setup
 
         public static List<string> IDList = new List<string>()
@@ -32,7 +34,8 @@ namespace Utility.MessageQueue
             UI,
             SCENE_LOAD,
             CAMERA,
-            METER
+            METER,
+            POSTPROCESS
         };
     }
 }

@@ -1,8 +1,11 @@
+using CameraManagement;
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Utility.MessageQueue;
+using VolumeManagement;
 
 namespace UI.TextDisplay
 {
@@ -99,9 +102,23 @@ namespace UI.TextDisplay
             else
             {
                 textDisplayWindow.SetActive(false);
+
+                //Activate mouse investigation
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
                     MessageQueueID.UI,
-                    "MouseActive"
+                    MouseManager.MOUSE_ACTIVE_MESSAGE
+                    );
+
+                //Reset the camera's position
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.UI,
+                    CameraController.RESET_MESSAGE
+                    );
+
+                //Reset the post process add volume
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.POSTPROCESS,
+                    VolumeController.RESET_MESSAGE
                     );
             }
         }
