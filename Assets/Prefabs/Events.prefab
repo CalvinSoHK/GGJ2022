@@ -323,6 +323,8 @@ MonoBehaviour:
     message: MouseActive
   - id: UI
     message: ShowChoice
+  - id: Dialogue
+    message: This is your introductory sentence.
 --- !u!114 &1200680015507307022
 MonoBehaviour:
   m_ObjectHideFlags: 0
