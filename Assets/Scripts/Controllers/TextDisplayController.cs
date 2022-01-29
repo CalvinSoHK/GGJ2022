@@ -66,11 +66,13 @@ namespace UI.TextDisplay
             textQueue.Enqueue(message);
             if (!textDisplayWindow.activeSelf && textQueue.Count > 0)
             {
+
                 animatingText = true;
                 fullText = textQueue.Dequeue();
                 currentText = "";
                 currentTextIndex = 0;
                 letterTimer = 0;
+                textMesh.text = "";
 
                 //textMesh.text = textQueue.Dequeue();
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
@@ -95,6 +97,8 @@ namespace UI.TextDisplay
                 currentText = "";
                 currentTextIndex = 0;
                 letterTimer = 0;
+                textMesh.text = "";
+                //textMesh.text = textQueue.Dequeue();
             }
             else
             {
