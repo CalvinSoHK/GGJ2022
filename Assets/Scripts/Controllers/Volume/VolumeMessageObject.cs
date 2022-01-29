@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utility.MessageQueue;
+using UnityEngine.Events;
 
 namespace VolumeManagement
 {
@@ -49,11 +50,26 @@ namespace VolumeManagement
             }
         }
 
-        public VolumeMessageObject(string _path, float _weight, float _time)
+        [SerializeField]
+        private UnityEvent endEvent;
+        /// <summary>
+        /// Event to invoke when we reach the target Event the target weight
+        /// </summary>
+        public UnityEvent EndEvent
+        {
+            get
+            {
+                return endEvent;
+            }
+        }
+
+        public VolumeMessageObject(string _path, float _weight, float _time, UnityEvent _event )
         {
             volumeProfilePath = _path;
             targetWeight = _weight;
             smoothTime = _time;
+            endEvent = _event;
+
         }
     }
 }

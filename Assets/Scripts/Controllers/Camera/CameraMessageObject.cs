@@ -47,17 +47,40 @@ namespace CameraManagement
             }
         }
 
+        [SerializeField]
+        private Color bgColor;
+
+        /// <summary>
+        /// If the passed in inputs are meant to be an origin point or the current point
+        /// </summary>
+        public Color BgColor
+        {
+            get
+            {
+                return bgColor;
+            }
+        }
+
         /// <summary>
         /// Constructs CameraMessageObject with given values
         /// </summary>
         /// <param name="_position"></param>
         /// <param name="_rotation"></param>
         /// <param name="_isOrigin"> If true camera will move there and set as new origin point </param>
-        public CameraMessageObject(Vector3 _position, Quaternion _rotation, bool _isOrigin = false)
+        public CameraMessageObject(Vector3 _position, Quaternion _rotation, bool _isOrigin = false, Color? _bgColor = null)
         {
+           
             position = _position;
             rotation = _rotation;
             isOrigin = _isOrigin;
+
+            if (_bgColor == null)
+            {
+                _bgColor = Color.white;
+            }
+
+            bgColor = (Color)_bgColor;
+
 
         }
     }

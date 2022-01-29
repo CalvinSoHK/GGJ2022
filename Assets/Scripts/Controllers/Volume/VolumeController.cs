@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Utility.MessageQueue;
+using UnityEngine.Events;
 
 namespace VolumeManagement
 {
@@ -29,10 +30,14 @@ namespace VolumeManagement
         /// </summary>
         private float smoothTime = 0.2f;
 
+        private UnityEvent endEvent;
+
         /// <summary>
         /// Target weight we want to be.
         /// </summary>
         private float targetWeight = 1;
+
+
 
 
         /// <summary>
@@ -90,6 +95,7 @@ namespace VolumeManagement
             targetWeight = obj.TargetWeight;
             VolumeProfile targetProfile = Resources.Load<VolumeProfile>(obj.VolumeProfilePath);
             targetVolume.profile = targetProfile;
+            endEvent = obj.EndEvent;
             StartCoroutine(ApproachWeight());
         }
 
@@ -110,6 +116,10 @@ namespace VolumeManagement
                 targetVolume.weight = Mathf.SmoothDamp(targetVolume.weight, targetWeight, ref refVelocity, smoothTime);
                 if(Mathf.Abs(targetVolume.weight - targetWeight) < 0.01f)
                 {
+                    if(endEvent != null)
+                    {
+                        endEvent?.Invoke();
+                    }
                     break;
                 }
                 yield return new WaitForEndOfFrame();
