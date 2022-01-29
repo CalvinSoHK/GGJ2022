@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 149928571}
   - component: {fileID: 149928574}
   - component: {fileID: 149928573}
+  - component: {fileID: 149928575}
   m_Layer: 0
   m_Name: Character1
   m_TagString: Untagged
@@ -605,6 +606,19 @@ MonoBehaviour:
   cameraPos: {x: 0, y: 0, z: 0}
   cameraRot: {x: 0, y: 0, z: 0}
   AddToQueueMessageEvent: 0
+--- !u!114 &149928575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149928559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5581e563b5575f94fa5f2edee8d5f41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {fileID: 11400000, guid: ccd96f39a39bd0d4895c26f1088a22b7, type: 2}
 --- !u!1 &267952003
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +641,7 @@ GameObject:
   - component: {fileID: 267952014}
   - component: {fileID: 267952016}
   - component: {fileID: 267952017}
+  - component: {fileID: 267952018}
   m_Layer: 0
   m_Name: Character2
   m_TagString: Untagged
@@ -935,6 +950,19 @@ MonoBehaviour:
         m_CallState: 2
   queueID: UI
   message: Choose/Right
+--- !u!114 &267952018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267952003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5581e563b5575f94fa5f2edee8d5f41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {fileID: 11400000, guid: ccd96f39a39bd0d4895c26f1088a22b7, type: 2}
 --- !u!1 &490374592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1753,6 @@ GameObject:
   - component: {fileID: 1128085159}
   - component: {fileID: 1128085161}
   - component: {fileID: 1128085160}
-  - component: {fileID: 1128085162}
   m_Layer: 0
   m_Name: MeterCompleteDelayEvent
   m_TagString: Untagged
@@ -1794,21 +1821,6 @@ MonoBehaviour:
   delayTime: 2
   queueID: UI
   message: CompleteMeter
---- !u!114 &1128085162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128085158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03674c7a62171324db4ce4da28a563cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetProfilePath: Volumes/TransitionTo3
-  targetWeight: 1
-  smoothTime: 0.8
 --- !u!1 &1211358807
 GameObject:
   m_ObjectHideFlags: 0
