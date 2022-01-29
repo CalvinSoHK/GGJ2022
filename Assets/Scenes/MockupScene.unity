@@ -267,6 +267,8 @@ GameObject:
   - component: {fileID: 149928560}
   - component: {fileID: 149928566}
   - component: {fileID: 149928565}
+  - component: {fileID: 149928567}
+  - component: {fileID: 149928568}
   m_Layer: 0
   m_Name: Character1
   m_TagString: Untagged
@@ -415,6 +417,35 @@ MonoBehaviour:
         m_CallState: 2
   outline: {fileID: 149928560}
   outlineWidth: 7
+--- !u!114 &149928567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149928559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e2dae9671a55745b9bb28e781ea216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPos: {x: -1.777599, y: 0.4358993, z: -3.751622}
+  cameraRot: {x: 11.208, y: 9.901, z: 0}
+--- !u!114 &149928568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149928559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03674c7a62171324db4ce4da28a563cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetProfilePath: Volumes/FocusVolume
+  targetWeight: 1
+  smoothTime: 0.5
 --- !u!1 &267952003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1734,10 @@ PrefabInstance:
     - target: {fileID: 5218918413585249613, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_Name
       value: SingletonToolbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017556774165928628, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: priority
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7622423590443771411, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_Dithering

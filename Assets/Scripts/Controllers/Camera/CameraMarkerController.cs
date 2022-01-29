@@ -15,7 +15,7 @@ namespace CameraManagement
             //Queue a message with our position and rotation then destroy ourselves
             Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
                 MessageQueueID.CAMERA,
-                JsonUtility.ToJson(new CameraMessageObject(transform.position, transform.rotation))
+                JsonUtility.ToJson(new CameraMessageObject(transform.position, transform.rotation, true))
                 );
             Destroy(gameObject);
         }

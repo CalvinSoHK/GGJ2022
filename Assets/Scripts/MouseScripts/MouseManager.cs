@@ -26,6 +26,10 @@ namespace Player
         /// </summary>
         private bool mouseActive = false;
 
+        public static string MOUSE_ACTIVE_MESSAGE = "MouseActive";
+
+        public static string MOUSE_INACTIVE_MESSAGE = "MouseInactive";
+
         private void OnEnable()
         {
             MessageQueuesManager.MessagePopEvent += HandleMessage;
@@ -87,11 +91,11 @@ namespace Player
         {
             if (id.Equals(MessageQueueID.UI))
             {
-                if (msg.Equals("MouseActive"))
+                if (msg.Equals(MOUSE_ACTIVE_MESSAGE))
                 {
                     mouseActive = true;
                 }
-                else if (msg.Equals("MouseInactive"))
+                else if (msg.Equals(MOUSE_INACTIVE_MESSAGE))
                 {
                     mouseActive = false;
                 }
