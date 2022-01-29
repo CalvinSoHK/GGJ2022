@@ -66,13 +66,13 @@ namespace UI.TextDisplay
             textQueue.Enqueue(message);
             if (!textDisplayWindow.activeSelf && textQueue.Count > 0)
             {
+
                 animatingText = true;
                 fullText = textQueue.Dequeue();
                 currentText = "";
                 currentTextIndex = 0;
                 letterTimer = 0;
-
-                //textMesh.text = textQueue.Dequeue();
+                textMesh.text = "";
                 textDisplayWindow.SetActive(true);
             }
         }
@@ -91,6 +91,7 @@ namespace UI.TextDisplay
                 currentText = "";
                 currentTextIndex = 0;
                 letterTimer = 0;
+                textMesh.text = "";
                 //textMesh.text = textQueue.Dequeue();
             }
             else
