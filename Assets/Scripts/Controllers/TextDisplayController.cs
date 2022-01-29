@@ -129,7 +129,7 @@ namespace UI.TextDisplay
 
                 //Reset the post process add volume
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
-                    MessageQueueID.POSTPROCESS,
+                    MessageQueueID.UI,
                     VolumeController.RESET_MESSAGE
                     );
 

@@ -1,7 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Utility.MessageQueue;
+using VolumeManagement;
+using UnityEngine.Rendering.Universal;
 
 namespace CameraManagement
 {
@@ -37,6 +40,14 @@ namespace CameraManagement
         public static string RESET_MESSAGE = "ResetCamera";
 
         public static string COMPLETE_MESSAGE = "CameraComplete";
+        /// <summary>
+        /// The profile we want to activate when we get the message to
+        /// </summary>
+        [SerializeField]
+        private Volume targetVolume;
+
+        ColorAdjustments caComponent;
+
 
         private void OnEnable()
         {
@@ -56,6 +67,7 @@ namespace CameraManagement
                 if (obj.IsOrigin)
                 {
                     HandleNewOrigin(obj);
+                  
                 }
                 else
                 {
@@ -69,6 +81,21 @@ namespace CameraManagement
                     HandleCameraReset();
                 }
             }
+            else if(id.Equals(MessageQueueID.POSTPROCESS))
+            {
+                VolumeMessageObject obj = JsonUtility.FromJson<VolumeMessageObject>(msg);
+                VolumeProfile targetProfile = Resources.Load<VolumeProfile>(obj.VolumeProfilePath);
+                if(targetProfile != null)
+                {
+                    //targetVolume.profile = targetProfile;
+
+                    ColorAdjustments tmp;
+                    if (targetProfile.TryGet<ColorAdjustments>(out tmp))
+                    {
+                        caComponent = tmp;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -80,6 +107,8 @@ namespace CameraManagement
             originPos = obj.Position;
             originRot = obj.Rotation;
             transform.SetPositionAndRotation(obj.Position, obj.Rotation);
+            GetComponent<Camera>().backgroundColor = caComponent != null ? (Color) caComponent.colorFilter : GetComponent<Camera>().backgroundColor;
+            //change color here
         }
 
         /// <summary>

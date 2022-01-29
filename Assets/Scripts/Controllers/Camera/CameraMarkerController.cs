@@ -7,15 +7,19 @@ namespace CameraManagement
 {
     public class CameraMarkerController : MonoBehaviour
     {
+
+        private Camera cam;
+
         /// <summary>
         /// On start queue a message of our information then destroy ourselves
         /// </summary>
         private void Start()
         {
+            cam = GetComponent<Camera>();
             //Queue a message with our position and rotation then destroy ourselves
             Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
                 MessageQueueID.CAMERA,
-                JsonUtility.ToJson(new CameraMessageObject(transform.position, transform.rotation, true))
+                JsonUtility.ToJson(new CameraMessageObject(transform.position, transform.rotation, true, cam.backgroundColor))
                 );
             Destroy(gameObject);
         }

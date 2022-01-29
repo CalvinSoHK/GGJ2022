@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionSmoothTime: 0.2
   rotationSmoothTime: 0.2
+  targetVolume: {fileID: 0}
 --- !u!114 &7622423590443771411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meter1: {fileID: 3499105002391809180}
   meter2: {fileID: 4066189867177444039}
+  smoothDampTime: 0.2
 --- !u!1 &3672558437987965478
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +908,8 @@ MonoBehaviour:
   countPrefab2: {fileID: 6184975844233551479, guid: c1e64c3771b0bba489e13887d249e975, type: 3}
   targetTransform: {fileID: 4824621219185268328}
   smoothTime: 0.3
+  waitTimeBeforeReversing: 1000
+  waitBetweenOriginalAndTargetInSeconds: 1000
 --- !u!1 &5218918412304192857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2194,10 @@ MonoBehaviour:
   targetProfilePath: Volumes/ChoiceVolume
   targetWeight: 1
   smoothTime: 0.4
+  endEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AddToQueueMessageEvent: 1
 --- !u!1 &6551400366617494178
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Utility.MessageQueue;
+using UnityEngine.Events;
 
 namespace VolumeManagement
 {
@@ -23,14 +24,37 @@ namespace VolumeManagement
         [SerializeField]
         private float smoothTime;
 
+        [Tooltip("Event to be invoked when target weight is reached")]
+        [SerializeField]
+        private UnityEvent endEvent;
+
+        [SerializeField]
+        private bool AddToQueueMessageEvent = true;
+
         private void Start()
         {
-            GetComponent<QueueMessageEvent>().AddMessage(
-                MessageQueueID.POSTPROCESS,
-                JsonUtility.ToJson(new VolumeMessageObject(
+            if (AddToQueueMessageEvent)
+            {
+                GetComponent<QueueMessageEvent>().AddMessage(
+                    MessageQueueID.POSTPROCESS,
+                    JsonUtility.ToJson(new VolumeMessageObject(
+                        targetProfilePath,
+                        targetWeight,
+                        smoothTime,
+                        endEvent)
+                    ));
+            }
+        }
+
+        public void QueueMessage()
+        {
+            Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.POSTPROCESS,
+                    JsonUtility.ToJson(new VolumeMessageObject(
                     targetProfilePath,
                     targetWeight,
-                    smoothTime)
+                    smoothTime,
+                    endEvent)
                 ));
         }
     }
