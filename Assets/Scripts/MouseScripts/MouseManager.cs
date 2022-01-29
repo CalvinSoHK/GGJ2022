@@ -2,6 +2,7 @@ using Interactable;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility.MessageQueue;
 
 /*
  *  base used: 
@@ -20,10 +21,42 @@ namespace Player
 
         private GameObject currentHoveredObject;
 
-        private const string CLICKABLE_TAG = "Interactable";
+        /// <summary>
+        /// Whether or not we can use the mouse to investigate clickable objects.
+        /// </summary>
+        private bool mouseActive = false;
 
-        // Update is called once per frame
+        private void OnEnable()
+        {
+            MessageQueuesManager.MessagePopEvent += HandleMessage;
+        }
+
+        private void OnDisable()
+        {
+            MessageQueuesManager.MessagePopEvent += HandleMessage;
+        }
+
         void Update()
+        {
+            if (mouseActive)
+            {
+                ProcessMouse();
+            }
+        }
+
+        /// <summary>
+        /// Disables the outline and the currentHoveredObject, then sets it back to null
+        /// </summary>
+        private void DisableLastOutline()
+        {
+            currentHoveredObject.GetComponent<ClickableObject>().SetOutlineActive(false);
+            currentHoveredObject = null;
+        }
+
+        /// <summary>
+        /// Processes mouse position and hovers on objects and allows clicking
+        /// </summary>
+        private void ProcessMouse()
         {
             ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -38,18 +71,30 @@ namespace Player
                     {
                         currentHoveredObject.GetComponent<ClickableObject>().ClickObject();
                     }
-
                 }
                 else if (currentHoveredObject != null)
                 {
-                    currentHoveredObject.GetComponent<ClickableObject>().SetOutlineActive(false);
-                    currentHoveredObject = null;
+                    DisableLastOutline();
                 }
             }
             else if (currentHoveredObject != null)
             {
-                currentHoveredObject.GetComponent<ClickableObject>().SetOutlineActive(false);
-                currentHoveredObject = null;
+                DisableLastOutline();
+            }
+        }
+
+        private void HandleMessage(string id, string msg)
+        {
+            if (id.Equals(MessageQueueID.UI))
+            {
+                if (msg.Equals("MouseActive"))
+                {
+                    mouseActive = true;
+                }
+                else if (msg.Equals("MouseInactive"))
+                {
+                    mouseActive = false;
+                }
             }
         }
     }

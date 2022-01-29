@@ -941,6 +941,8 @@ MonoBehaviour:
   messageInfoList:
   - id: UI
     message: ShowMeter
+  - id: UI
+    message: MouseActive
 --- !u!114 &755639077
 MonoBehaviour:
   m_ObjectHideFlags: 0

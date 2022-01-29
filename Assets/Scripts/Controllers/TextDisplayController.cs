@@ -22,7 +22,7 @@ namespace UI.TextDisplay
         /// </summary>
         private Queue<string> textQueue = new Queue<string>();
 
-        private bool animatingText = false; // diplaying the letters in text
+        private bool animatingText = false; // displaying the letters in text
         private string fullText = ""; // reference to the complete string to be displayed
         private string currentText = ""; //reference that holds letters from full text
         private int currentTextIndex = 0; //index of which char from fullText to display next
@@ -73,6 +73,10 @@ namespace UI.TextDisplay
                 letterTimer = 0;
 
                 //textMesh.text = textQueue.Dequeue();
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.UI,
+                    "MouseInactive"
+                    );
                 textDisplayWindow.SetActive(true);
             }
         }
@@ -91,11 +95,14 @@ namespace UI.TextDisplay
                 currentText = "";
                 currentTextIndex = 0;
                 letterTimer = 0;
-                //textMesh.text = textQueue.Dequeue();
             }
             else
             {
                 textDisplayWindow.SetActive(false);
+                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                    MessageQueueID.UI,
+                    "MouseActive"
+                    );
             }
         }
 
@@ -124,9 +131,6 @@ namespace UI.TextDisplay
                         letterTimer = 0f;
                     }
                 }
-
-
-
             }
         }
 
