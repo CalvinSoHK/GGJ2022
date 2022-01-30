@@ -2794,7 +2794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[2].id
@@ -2813,16 +2813,20 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[2].message
+      propertyPath: messageInfoList.Array.data[1].message
       value: "Moving on. Loading scene, \u201COffice (v2.4).\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[3].message
+      propertyPath: messageInfoList.Array.data[2].message
       value: Select which subject is more deserving of a promotion.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[4].message
+      propertyPath: messageInfoList.Array.data[3].message
       value: They will receive a significant salary boost and a new title.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].message
+      value: Who will it be?
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[5].message
