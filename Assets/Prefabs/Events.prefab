@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 1200680015169176354}
   - component: {fileID: 1200680015169176356}
   - component: {fileID: 1200680015169176357}
+  - component: {fileID: 8923509566350847857}
   m_Layer: 0
   m_Name: CountCompleteDelayEvent
   m_TagString: Untagged
@@ -216,6 +217,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8923509566350847857}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayTime: 1
   queueID: GameState
   message: CountComplete
@@ -234,6 +247,20 @@ MonoBehaviour:
   messageInfoList:
   - id: UI
     message: UpdateMeter
+--- !u!114 &8923509566350847857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200680015169176355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: ad9ef6e77be507b4bb89f1f8d31e5842, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!1 &1200680015507307018
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +418,7 @@ GameObject:
   - component: {fileID: 5366504507769465652}
   - component: {fileID: 3479045566796852358}
   - component: {fileID: 6668464542916675929}
+  - component: {fileID: 553412454210118731}
   m_Layer: 0
   m_Name: ChooseLeftEvent
   m_TagString: Untagged
@@ -439,6 +467,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 553412454210118731}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   queueID: UI
   message: Choose/Left
 --- !u!114 &6668464542916675929
@@ -456,6 +496,20 @@ MonoBehaviour:
   addMeter1Value: 1
   addMeter2Value: 0
   addOnStart: 0
+--- !u!114 &553412454210118731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348482806581277581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 78dd52cdbbaacd04aa7945ab2911f293, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!1 &4496049718270607670
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +521,7 @@ GameObject:
   - component: {fileID: 1322591306810452405}
   - component: {fileID: 6227892225741134705}
   - component: {fileID: 4820855938577104455}
+  - component: {fileID: 9169622113060831066}
   m_Layer: 0
   m_Name: ChooseRightEvent
   m_TagString: Untagged
@@ -515,6 +570,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9169622113060831066}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   queueID: UI
   message: Choose/Right
 --- !u!114 &4820855938577104455
@@ -532,6 +599,20 @@ MonoBehaviour:
   addMeter1Value: 0
   addMeter2Value: 1
   addOnStart: 0
+--- !u!114 &9169622113060831066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496049718270607670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 78dd52cdbbaacd04aa7945ab2911f293, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!1 &4743555626525130468
 GameObject:
   m_ObjectHideFlags: 0

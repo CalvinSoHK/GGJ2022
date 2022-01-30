@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 4572968549379514007}
   - component: {fileID: 387167402}
   - component: {fileID: 387167401}
+  - component: {fileID: 5778349284014846699}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -756,6 +757,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5778349284014846699}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   selectionMarker: {fileID: 2457664734154786372}
   outline: {fileID: 0}
   outlineWidth: 0
@@ -786,3 +799,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749d74fefb783f646b1b1705033f3ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5778349284014846699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076498622960788068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: d84bc3f7dfd46c244a95860aec25ca92, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}

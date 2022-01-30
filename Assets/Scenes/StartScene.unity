@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72300b3211d87345b92639c316c3a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgm: {fileID: 0}
 --- !u!114 &201922118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +693,7 @@ GameObject:
   - component: {fileID: 1232581809}
   - component: {fileID: 1232581810}
   - component: {fileID: 1232581811}
+  - component: {fileID: 1232581812}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -780,6 +782,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1232581812}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -888,6 +902,20 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
   defaultTextColor: {fileID: 11400000, guid: f6b26b7b07e899545a458580c15d0f27, type: 2}
   hoverTextColor: {fileID: 11400000, guid: b7aa8dace7cecab40835f5c1a46e7ca6, type: 2}
+--- !u!114 &1232581812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232581804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5c9fec5b1a744f14cb7597eae0e48683, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!114 &1388234888 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 619607105207010804, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
@@ -913,6 +941,7 @@ GameObject:
   - component: {fileID: 1500666168}
   - component: {fileID: 1500666171}
   - component: {fileID: 1500666172}
+  - component: {fileID: 1500666173}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -996,6 +1025,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1500666173}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1500666169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1108,20 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
   defaultTextColor: {fileID: 11400000, guid: f6b26b7b07e899545a458580c15d0f27, type: 2}
   hoverTextColor: {fileID: 11400000, guid: b7aa8dace7cecab40835f5c1a46e7ca6, type: 2}
+--- !u!114 &1500666173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500666166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5c9fec5b1a744f14cb7597eae0e48683, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!1 &1552327252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,17 +1445,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909020712}
   m_CullTransparentMesh: 1
---- !u!114 &2134270129 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7482018325633843156, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-  m_PrefabInstance: {fileID: 5218918411981834618}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7489cdff8f58354c921ddf58ba559e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5218918411981834618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,7 +1491,7 @@ PrefabInstance:
     - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134270129}
+      objectReference: {fileID: 0}
     - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2

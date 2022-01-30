@@ -888,6 +888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MarkerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8601254180997549160, guid: 2ff582e4383331c40aa07238be837c09, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 736d0f846be5d1c4daf56caa7e2b94ec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff582e4383331c40aa07238be837c09, type: 3}
 --- !u!1001 &651646294
@@ -903,7 +907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.size
-      value: 8
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].id
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[3].id
@@ -926,24 +934,28 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[2].message
+      propertyPath: messageInfoList.Array.data[1].message
       value: Next, some levity.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[3].message
+      propertyPath: messageInfoList.Array.data[2].message
       value: "Tonight is \u201CGame Night (ref 43b)\u201D. "
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[4].message
+      propertyPath: messageInfoList.Array.data[3].message
       value: This group needs one additional person.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[5].message
+      propertyPath: messageInfoList.Array.data[4].message
       value: Either subject is free to join,
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[6].message
+      propertyPath: messageInfoList.Array.data[5].message
       value: but there is only room for one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[6].message
+      value: Who will it be?
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[7].message

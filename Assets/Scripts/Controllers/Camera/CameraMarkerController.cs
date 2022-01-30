@@ -10,6 +10,9 @@ namespace CameraManagement
 
         private Camera cam;
 
+        [SerializeField]
+        AudioSource bgm;
+
         /// <summary>
         /// On start queue a message of our information then destroy ourselves
         /// </summary>
@@ -21,6 +24,9 @@ namespace CameraManagement
                 MessageQueueID.CAMERA,
                 JsonUtility.ToJson(new CameraMessageObject(transform.position, transform.rotation, true, cam.backgroundColor))
                 );
+
+            bgm.transform.parent = null;
+
             Destroy(gameObject);
         }
     }

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 162039206}
   - component: {fileID: 162039209}
   - component: {fileID: 162039208}
+  - component: {fileID: 162039210}
   m_Layer: 0
   m_Name: _LoadingManager
   m_TagString: Untagged
@@ -212,6 +213,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 162039210}
+        m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &162039210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162039205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51acb3aa49b314297eaea2d5f66874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 3da2336ca0401b44086cfcd6b8cfec1c, type: 3}
+  audioMixerGroup: {fileID: 943277267484582956, guid: 8c22ac615e1b2c344baecf485d1b89aa, type: 2}
 --- !u!1 &466300170
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72300b3211d87345b92639c316c3a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgm: {fileID: 0}
 --- !u!114 &799050831
 MonoBehaviour:
   m_ObjectHideFlags: 0

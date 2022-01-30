@@ -1517,6 +1517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MarkerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8601254180997549160, guid: 2ff582e4383331c40aa07238be837c09, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd4ed8c91c744664baa849f473af96b7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff582e4383331c40aa07238be837c09, type: 3}
 --- !u!1 &946284012
@@ -2791,6 +2795,10 @@ PrefabInstance:
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].id
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[3].id
