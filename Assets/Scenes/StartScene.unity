@@ -888,6 +888,17 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
   defaultTextColor: {fileID: 11400000, guid: f6b26b7b07e899545a458580c15d0f27, type: 2}
   hoverTextColor: {fileID: 11400000, guid: b7aa8dace7cecab40835f5c1a46e7ca6, type: 2}
+--- !u!114 &1388234888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 619607105207010804, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+  m_PrefabInstance: {fileID: 5218918411981834618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7489cdff8f58354c921ddf58ba559e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500666166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1390,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909020712}
   m_CullTransparentMesh: 1
+--- !u!114 &2134270129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7482018325633843156, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+  m_PrefabInstance: {fileID: 5218918411981834618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7489cdff8f58354c921ddf58ba559e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5218918411981834618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1386,29 +1408,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5218918412304192857, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 60
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 67
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1388234888}
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 591.7
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetSprite
       objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -176
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonController, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 5218918413545169214, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 4415220351010195797, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2134270129}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218918412304192860, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5218918413585249603, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_RootOrder
