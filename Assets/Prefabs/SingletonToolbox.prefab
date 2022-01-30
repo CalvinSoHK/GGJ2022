@@ -1099,8 +1099,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 605, y: -106}
-  m_SizeDelta: {x: 488, y: 127}
+  m_AnchoredPosition: {x: 591.7, y: -176}
+  m_SizeDelta: {x: 60, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5218918412304192850
 CanvasRenderer:
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72a8d0965d24bff4e953143d93d353ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1225,8 +1225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetImg: {fileID: 5218918412304192861}
   targetText: {fileID: 0}
-  defaultSprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
-  hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 72a8d0965d24bff4e953143d93d353ea, type: 3}
+  hoverSprite: {fileID: 21300000, guid: 4ef9d41332c015c4081e8171c22c4fe6, type: 3}
   defaultTextColor: {fileID: 0}
   hoverTextColor: {fileID: 0}
 --- !u!1 &5218918412765787823
