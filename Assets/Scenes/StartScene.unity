@@ -575,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageInfoList:
   - id: SceneLoad
-    message: 2
+    message: 3
 --- !u!1 &1200357485
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03674c7a62171324db4ce4da28a563cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetProfilePath: Volumes/TransitionVolume
+  targetProfilePath: Volumes/TransitionToOffice
   targetWeight: 1
   smoothTime: 0.5
   endEvent:
@@ -868,6 +868,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  AddToQueueMessageEvent: 1
 --- !u!1 &1500666166
 GameObject:
   m_ObjectHideFlags: 0

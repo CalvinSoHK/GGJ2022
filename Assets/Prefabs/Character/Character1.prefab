@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 2478177156021172173}
-  targetPos: {x: -1.8, y: -5, z: -4.4}
+  targetPos: {x: -1.8, y: -10, z: -4.4}
   targetRot: {x: 0, y: 0, z: 0, w: 1}
-  positionSmoothTime: 0.4
-  rotationSmoothTime: 0.4
+  positionSmoothTime: 0.6
+  rotationSmoothTime: 0.6
