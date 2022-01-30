@@ -209,6 +209,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   selectionMarker: {fileID: 6023616571143662603}
+  outline: {fileID: 0}
+  outlineWidth: 0
+  firstChara: 0
+  messageEvent: {fileID: 7278401368464513097}
 --- !u!65 &1125797574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -580,9 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3186ceccfd652143bf3592e83f32236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageInfoList:
-  - id: Dialogue
-    message: Filler text
+  messageInfoList: []
 --- !u!114 &7278401368464513092
 MonoBehaviour:
   m_ObjectHideFlags: 0

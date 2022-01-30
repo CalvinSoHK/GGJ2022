@@ -1,3 +1,4 @@
+using Event;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,42 @@ namespace Interactable
         [SerializeField]
         private GameObject selectionMarker;
 
+        [SerializeField]
+        private Outline outline;
+
+        [SerializeField]
+        private float outlineWidth;
+
+        [SerializeField]
+        private bool firstChara = false;
+
+        [SerializeField]
+        private QueueMessageEvent messageEvent;
+
+        private bool firstMessage = true;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            SetupOutline();
+            if(firstChara)
+            {
+                Singleton.Instance.GetComponent<AllPairedTextHolder>().setNewIndex();
+                
+            }
+        }
+
+        /// <summary>
+        /// Initializes Outline component
+        /// </summary>
+        void SetupOutline()
+        {
+            if (outline == null)
+            {
+                outline = this.GetComponent<Outline>();
+            }
+        }
+
         /// <summary>
         /// Sets outline active state        
         /// /// </summary>
@@ -24,6 +61,11 @@ namespace Interactable
 
         public void ClickObject()
         {
+            if(firstMessage)
+            {
+                firstMessage = false;
+                messageEvent.AddMessage("Dialogue", Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara));
+            }
             OnClickEvent?.Invoke();
         }
     }

@@ -418,9 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3186ceccfd652143bf3592e83f32236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageInfoList:
-  - id: Dialogue
-    message: Filler text
+  messageInfoList: []
 --- !u!114 &2478177156021172161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +757,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   selectionMarker: {fileID: 2457664734154786372}
+  outline: {fileID: 0}
+  outlineWidth: 0
+  firstChara: 1
+  messageEvent: {fileID: 2478177156021172172}
 --- !u!65 &387167402
 BoxCollider:
   m_ObjectHideFlags: 0
