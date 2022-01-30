@@ -144,10 +144,10 @@ namespace UI.TextDisplay
                     );
 
                 //Reset the post process add volume
-                Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
-                    MessageQueueID.UI,
-                    VolumeController.RESET_MESSAGE
-                    );
+                //Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+                //    MessageQueueID.UI,
+                //    VolumeController.RESET_MESSAGE
+                //    );
 
                 //Turn the choice window back on
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
