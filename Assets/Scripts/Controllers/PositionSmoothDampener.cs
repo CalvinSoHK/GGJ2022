@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Smooth damps this object to target position and rotation on request
@@ -9,6 +10,17 @@ public class PositionSmoothDampener : MonoBehaviour
 {
     [SerializeField]
     private Transform targetTransform;
+
+    /// <summary>
+    /// Target this will be manipulating
+    /// </summary>
+    public Transform Target
+    {
+        get
+        {
+            return targetTransform;
+        }
+    }
 
     [SerializeField]
     private Vector3 targetPos = Vector3.zero;
@@ -23,6 +35,9 @@ public class PositionSmoothDampener : MonoBehaviour
 
     [SerializeField]
     private float rotationSmoothTime = 0.2f;
+
+    [SerializeField]
+    private UnityEvent OnFinishEvent = new UnityEvent();
 
     /// <summary>
     /// Breaks existing coroutines when set to true.
@@ -40,6 +55,28 @@ public class PositionSmoothDampener : MonoBehaviour
         }
 
         StartCoroutine(SmoothToPositionCoroutine());
+    }
+
+    /// <summary>
+    /// Sets new target pos and rot at runtime
+    /// </summary>
+    /// <param name="_targetPos"></param>
+    /// <param name="_targetRot"></param>
+    public void SetTargetPositionAndRot(Vector3 _targetPos, Quaternion _targetRot)
+    {
+        targetPos = _targetPos;
+        targetRot = _targetRot;
+    }
+
+    /// <summary>
+    /// Sets our pos and rotation smooth time for smooth damp at runtime
+    /// </summary>
+    /// <param name="_posTime"></param>
+    /// <param name="_rotTime"></param>
+    public void SetPosAndRotSmoothTime(float _posTime, float _rotTime)
+    {
+        positionSmoothTime = _posTime;
+        rotationSmoothTime = _rotTime;
     }
 
     /// <summary>
@@ -66,12 +103,17 @@ public class PositionSmoothDampener : MonoBehaviour
                 targetTransform.rotation = Quaternion.Slerp(targetTransform.rotation, targetRot, t);
             }
 
-            if(Vector3.Distance(targetTransform.position, targetPos) <= 0.01f)
+            if(Vector3.Distance(targetTransform.position, targetPos) <= 0.01f && delta < 0.1f)
             {
+                OnFinishEvent?.Invoke();
                 break;
             }
 
             yield return new WaitForEndOfFrame();
         }
+
+        //Set to position so we are at pos and rot in case of small differences
+        transform.position = targetTransform.position;
+        transform.rotation = targetTransform.rotation;
     }
 }

@@ -21,6 +21,8 @@ public class MovePiecesIntoPlace : MonoBehaviour
     // Time when the movement started.
     private float startTime;
 
+    public static string DIORAMA_COMPLETE = "DioramaComplete";
+
     private void OnEnable()
     {
         MessageQueuesManager.MessagePopEvent += HandleMessage;
@@ -75,6 +77,7 @@ public class MovePiecesIntoPlace : MonoBehaviour
 
                 if (!stillActive)
                 {
+                    QueueCompleteMessage();
                     setCurrentState(PieceState.Idle);
                 }
 
@@ -102,6 +105,7 @@ public class MovePiecesIntoPlace : MonoBehaviour
 
                 if(!stillActive)
                 {
+                    QueueCompleteMessage();
                     setCurrentState(PieceState.Idle);
                 }
 
@@ -165,5 +169,13 @@ public class MovePiecesIntoPlace : MonoBehaviour
                 setCurrentState(PieceState.MovingOut);
             }
         }
+    }
+
+    private void QueueCompleteMessage()
+    {
+        Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
+            MessageQueueID.GAMESTATE,
+            DIORAMA_COMPLETE
+            );
     }
 }
