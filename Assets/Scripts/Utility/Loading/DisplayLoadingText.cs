@@ -15,7 +15,7 @@ public class DisplayLoadingText : MonoBehaviour
     private int currentTextIndex = 0; //index of which char from fullText to display next
     private float letterTimer = 0f; // current time between letters
 
-    int firstScene = 3;
+    int firstScene = 2;
     public bool isMainText = false;
 
     [SerializeField] //amount of time between each letter
@@ -26,7 +26,7 @@ public class DisplayLoadingText : MonoBehaviour
     {
         fullText = potentialText[Random.Range(0, potentialText.Length - 1)];
         int sceneValue = Singleton.Instance.GetComponent<LoadingSingleton>().nextSceneToLoad;
-        Debug.Log(sceneValue);
+        //Debug.Log(sceneValue);
         if (firstScene != sceneValue || isMainText)
         {
             animatingText = true;

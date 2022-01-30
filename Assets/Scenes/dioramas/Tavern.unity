@@ -1060,8 +1060,8 @@ MonoBehaviour:
   childrenEndPosition: []
   childrenStartPosition: []
   currentState: 0
-  randomizeDistance: {x: -30, y: 30}
-  speed: 35
+  randomizeDistance: {x: -100, y: 100}
+  speed: 50
 --- !u!4 &668399027
 Transform:
   m_ObjectHideFlags: 0

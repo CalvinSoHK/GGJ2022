@@ -157,7 +157,7 @@ MonoBehaviour:
   childrenStartPosition: []
   currentState: 0
   randomizeDistance: {x: -100, y: 100}
-  speed: 100
+  speed: 50
 --- !u!4 &27090998
 Transform:
   m_ObjectHideFlags: 0

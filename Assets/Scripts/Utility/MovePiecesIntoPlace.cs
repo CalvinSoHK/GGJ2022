@@ -111,15 +111,6 @@ public class MovePiecesIntoPlace : MonoBehaviour
 
                 break;
         }
-
-  
-
-        if(Input.GetKeyDown("space"))
-        {
-            setCurrentState(PieceState.MovingOut);
-        }
-
-       
     }
 
     void getAllRelevantChildren()
