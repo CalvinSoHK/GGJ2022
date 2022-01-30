@@ -11,27 +11,7 @@ namespace Interactable
         UnityEvent OnClickEvent;
 
         [SerializeField]
-        private Outline outline;
-
-        [SerializeField]
-        private float outlineWidth;
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            SetupOutline();
-        }
-
-        /// <summary>
-        /// Initializes Outline component
-        /// </summary>
-        void SetupOutline()
-        {
-            if (outline == null)
-            {
-                outline = this.GetComponent<Outline>();
-            }
-        }
+        private GameObject selectionMarker;
 
         /// <summary>
         /// Sets outline active state        
@@ -39,7 +19,7 @@ namespace Interactable
         /// <param name="value"></param>
         public void SetOutlineActive(bool value)
         {
-            outline.OutlineWidth = value ? outlineWidth : 0;
+            selectionMarker.SetActive(value);
         }
 
         public void ClickObject()
