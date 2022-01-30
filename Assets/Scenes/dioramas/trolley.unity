@@ -2803,7 +2803,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.size
-      value: 9
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[1].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].id
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[3].id
@@ -2830,29 +2838,33 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[2].message
+      propertyPath: messageInfoList.Array.data[1].message
       value: Welcome back.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[3].message
+      propertyPath: messageInfoList.Array.data[2].message
       value: We will commence the next trial.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[4].message
+      propertyPath: messageInfoList.Array.data[3].message
       value: 'Simply make your judgment regarding the two individuals in the next
         scenario. '
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[5].message
+      propertyPath: messageInfoList.Array.data[4].message
       value: You are able to learn an additional fact about each of them.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[6].message
+      propertyPath: messageInfoList.Array.data[5].message
       value: From there, make your decision.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
-      propertyPath: messageInfoList.Array.data[7].message
+      propertyPath: messageInfoList.Array.data[6].message
       value: Let us start things off easy; consider the Trolley Problem.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[7].message
+      value: Who will you save?
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[8].message
