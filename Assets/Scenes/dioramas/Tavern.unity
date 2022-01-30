@@ -901,6 +901,54 @@ PrefabInstance:
       propertyPath: messageInfoList.Array.data[0].message
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[6].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[7].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].message
+      value: Next, some levity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].message
+      value: "Tonight is \u201CGame Night (ref 43b)\u201D. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].message
+      value: This group needs one additional person.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].message
+      value: Either subject is free to join,
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[6].message
+      value: but there is only room for one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[7].message
+      value: Who will it be?
+      objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath
       value: Volumes/TransitionTavern
