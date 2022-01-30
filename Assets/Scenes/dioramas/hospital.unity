@@ -3287,6 +3287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Events
       objectReference: {fileID: 0}
+    - target: {fileID: 7852565189087570890, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: targetProfilePath
+      value: Volumes/TransitionToFinal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
 --- !u!1 &1252239246
