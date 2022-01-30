@@ -197,18 +197,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7278401368464513092}
-        m_TargetAssemblyTypeName: VolumeManagement.VolumeMessageEvent, Assembly-CSharp
-        m_MethodName: QueueMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1931902337755179205}
         m_TargetAssemblyTypeName: AudioManagement.AudioPlayEvent, Assembly-CSharp
         m_MethodName: PlayAudio
@@ -443,6 +431,7 @@ GameObject:
   - component: {fileID: 7278401366898200838}
   - component: {fileID: 7278401366898200832}
   - component: {fileID: 7278401366898200839}
+  - component: {fileID: 1800640907655812874}
   m_Layer: 0
   m_Name: SelectedCameraPoint
   m_TagString: Untagged
@@ -509,6 +498,19 @@ MonoBehaviour:
         m_CallState: 2
   queueID: UI
   message: Choose/Right
+--- !u!114 &1800640907655812874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278401366898200837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb8b5b9941465e449cff7a24b58866e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 1125797572}
 --- !u!1 &7278401367126220726
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7278401367126220727}
   - component: {fileID: 7278401367126220720}
+  - component: {fileID: 5190134082743543012}
   m_Layer: 0
   m_Name: InvestigationCameraPoint
   m_TagString: Untagged
@@ -556,6 +559,19 @@ MonoBehaviour:
   cameraPos: {x: 0, y: 0, z: 0}
   cameraRot: {x: 0, y: 0, z: 0}
   AddToQueueMessageEvent: 0
+--- !u!114 &5190134082743543012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278401367126220726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb8b5b9941465e449cff7a24b58866e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 1125797572}
 --- !u!1 &7278401368464513107
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +582,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7278401368464513096}
   - component: {fileID: 7278401368464513097}
-  - component: {fileID: 7278401368464513092}
   - component: {fileID: 7278401368464513094}
   - component: {fileID: 7278401368464513093}
   - component: {fileID: 7278401368464513088}
@@ -612,25 +627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageInfoList: []
---- !u!114 &7278401368464513092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7278401368464513107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03674c7a62171324db4ce4da28a563cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetProfilePath: Volumes/FocusVolume
-  targetWeight: 1
-  smoothTime: 0.5
-  endEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  AddToQueueMessageEvent: 0
 --- !u!114 &7278401368464513094
 MonoBehaviour:
   m_ObjectHideFlags: 0

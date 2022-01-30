@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using Utility.MessageQueue;
 
 namespace AudioManagement
@@ -44,14 +45,21 @@ namespace AudioManagement
         [SerializeField]
         private int minNumSources = 3;
 
+        [Tooltip("Mixer to manipulate")]
+        [SerializeField]
+        private AudioMixer masterMixer;
+
+
         private void OnEnable()
         {
-            AudioPlayEvent.PlayAudioEvent += PlayAudio;
+            AudioPlayEvent.PlayAudioEvent += HandleAudioClip;
+            AudioMixerEvent.TransitionAudioMixerEvent += HandleMixer;
         }
 
         private void OnDisable()
         {
-            AudioPlayEvent.PlayAudioEvent -= PlayAudio;
+            AudioPlayEvent.PlayAudioEvent -= HandleAudioClip;
+            AudioMixerEvent.TransitionAudioMixerEvent -= HandleMixer;
         }
 
         private void Awake()
@@ -60,16 +68,6 @@ namespace AudioManagement
             {
                 AddNewSource();
             }
-        }
-
-        /// <summary>
-        /// Plays audio from the given audio message object
-        /// </summary>
-        /// <param name="obj"></param>
-        private void PlayAudio(AudioClipMessageObject obj)
-        {
-            AudioSource source = PickSource(obj);
-            PlayAudioOnSource(source, obj);
         }
 
         /// <summary>
@@ -85,6 +83,16 @@ namespace AudioManagement
             //Add new one to list
             sourceList.Add(new AudioSourceInfo(source));
             return source;
+        }
+
+        /// <summary>
+        /// Plays audio from the given audio message object
+        /// </summary>
+        /// <param name="obj"></param>
+        private void HandleAudioClip(AudioClipMessageObject obj)
+        {
+            AudioSource source = PickSource(obj);
+            PlayAudioOnSource(source, obj);
         }
 
 
@@ -120,9 +128,21 @@ namespace AudioManagement
             targetSource.Play();
         }
 
+        private void HandleMixer(AudioMixerMessageObject obj)
+        {
+            //Takes in an array of snapshots with weights for all snapshots
+            AudioMixerSnapshot[] snapshots = new AudioMixerSnapshot[1];
+            snapshots[0] = obj.TargetSnapshot;
+
+            float[] weights = new float[1];
+            weights[0] = 1;
+
+            masterMixer.TransitionToSnapshots(snapshots, weights, obj.TransitionTime);
+        }
+
         private void Update()
         {
-            
+
         }
 
         /// <summary>

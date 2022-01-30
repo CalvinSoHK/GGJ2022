@@ -29,9 +29,9 @@ namespace UI.TextDisplay
         private TextMeshProUGUI textMesh;
 
         [Tooltip("Wait time after clicking before allowing you to click again to proceed through dialogue")]
-        [Range(1, 10)]
+        [Range(0f, 10f)]
         [SerializeField]
-        private int inputDelayBySeconds = 2;
+        private float inputDelayBySeconds = 2;
 
         /// <summary>
         /// Text to display queue
@@ -215,12 +215,14 @@ namespace UI.TextDisplay
             textNextButton.SetActive(true);
         }
 
-        private async void WaitForFramesThenInteractable(int numFrames)
+        private async void WaitForFramesThenInteractable(float numSeconds)
         {
-            await Task.Delay((int)(inputDelayBySeconds * Time.deltaTime * 1000));
+            await Task.Delay((int)(numSeconds * 1000f));
 
-            dialogueBoxButton.interactable = true;
+            if(dialogueBoxButton != null && !dialogueBoxButton.interactable)
+            {
+                dialogueBoxButton.interactable = true;
+            }
         }
-
     }
 }
