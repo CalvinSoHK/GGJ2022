@@ -23,6 +23,11 @@ namespace Interactable
         [SerializeField]
         private bool firstChara = false;
 
+        [SerializeField]
+        private QueueMessageEvent messageEvent;
+
+        private bool firstMessage = true;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -56,7 +61,11 @@ namespace Interactable
 
         public void ClickObject()
         {
-            GetComponent<QueueMessageEvent>().AddMessage("Dialogue", Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara));
+            if(firstMessage)
+            {
+                firstMessage = false;
+                messageEvent.AddMessage("Dialogue", Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara));
+            }
             OnClickEvent?.Invoke();
         }
     }
