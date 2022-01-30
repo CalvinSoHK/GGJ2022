@@ -1386,30 +1386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5218918412304192857, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 67
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 591.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218918412304192862, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -176
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218918413545169214, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5218918413585249603, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
       propertyPath: m_RootOrder
       value: 2
