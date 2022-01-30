@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9016299045118427974
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.35
+    min: 0
+    max: 1
 --- !u!114 &-7078067404884913843
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -12,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1
@@ -36,22 +55,7 @@ MonoBehaviour:
   rounded:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: MainVolumeProfile
-  m_EditorClassIdentifier: 
-  components:
-  - {fileID: 1302081025597092715}
-  - {fileID: -7078067404884913843}
---- !u!114 &1302081025597092715
+--- !u!114 &-2099860846390737560
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,15 +73,15 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 2
   gaussianStart:
-    m_OverrideState: 1
-    m_Value: 15
+    m_OverrideState: 0
+    m_Value: 10
     min: 0
   gaussianEnd:
-    m_OverrideState: 1
-    m_Value: 20
+    m_OverrideState: 0
+    m_Value: 30
     min: 0
   gaussianMaxRadius:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
     min: 0.5
     max: 1.5
@@ -113,3 +117,19 @@ MonoBehaviour:
     m_Value: 0
     min: -180
     max: 180
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: MainVolumeProfile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -2099860846390737560}
+  - {fileID: -7078067404884913843}
+  - {fileID: -9016299045118427974}

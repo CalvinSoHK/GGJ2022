@@ -12,6 +12,9 @@ namespace Interactable
         UnityEvent OnClickEvent;
 
         [SerializeField]
+        private GameObject selectionMarker;
+
+        [SerializeField]
         private Outline outline;
 
         [SerializeField]
@@ -48,7 +51,7 @@ namespace Interactable
         /// <param name="value"></param>
         public void SetOutlineActive(bool value)
         {
-            outline.OutlineWidth = value ? outlineWidth : 0;
+            selectionMarker.SetActive(value);
         }
 
         public void ClickObject()
