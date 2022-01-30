@@ -3,8 +3,10 @@ using ChoiceManagement;
 using Player;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Utility.MessageQueue;
 using VolumeManagement;
 
@@ -15,11 +17,21 @@ namespace UI.TextDisplay
         [SerializeField]
         private GameObject textDisplayWindow;
 
+        [Tooltip("The actual next button that we need to set active")]
         [SerializeField]
         private GameObject textNextButton;
 
+        [Tooltip("The actual dialogue box as a button.")]
+        [SerializeField]
+        private Button dialogueBoxButton;
+
         [SerializeField]
         private TextMeshProUGUI textMesh;
+
+        [Tooltip("Wait time after clicking before allowing you to click again to proceed through dialogue")]
+        [Range(1, 10)]
+        [SerializeField]
+        private int inputDelayBySeconds = 2;
 
         /// <summary>
         /// Text to display queue
@@ -78,6 +90,7 @@ namespace UI.TextDisplay
                 currentTextIndex = 0;
                 letterTimer = 0;
                 textMesh.text = "";
+                dialogueBoxButton.interactable = false;
 
                 //textMesh.text = textQueue.Dequeue();
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
@@ -110,11 +123,13 @@ namespace UI.TextDisplay
                 currentTextIndex = 0;
                 letterTimer = 0;
                 textMesh.text = "";
+                dialogueBoxButton.interactable = false;
                 //textMesh.text = textQueue.Dequeue();
             }
             else
             {
                 textDisplayWindow.SetActive(false);
+                dialogueBoxButton.GetComponent<ButtonController>().ResetSprite();
 
                 //Activate mouse investigation
                 Singleton.Instance.GetComponent<MessageQueuesManager>().TryQueueMessage(
@@ -156,6 +171,7 @@ namespace UI.TextDisplay
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    WaitForFramesThenInteractable(inputDelayBySeconds);
                     ShowFullText();
                 }
                 else
@@ -184,6 +200,7 @@ namespace UI.TextDisplay
             else
             {
                 ShowFullText();
+                dialogueBoxButton.interactable = true;
             }
             
         }
@@ -196,6 +213,13 @@ namespace UI.TextDisplay
             textMesh.text = fullText;
             animatingText = false;
             textNextButton.SetActive(true);
+        }
+
+        private async void WaitForFramesThenInteractable(int numFrames)
+        {
+            await Task.Delay((int)(inputDelayBySeconds * Time.deltaTime * 1000));
+
+            dialogueBoxButton.interactable = true;
         }
 
     }
