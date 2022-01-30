@@ -45,11 +45,6 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ResetSprite();
-    }
-
-    public void ResetSprite()
-    {
         targetImg.sprite = defaultSprite;
         if (targetText != null)
         {
