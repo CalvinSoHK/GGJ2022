@@ -269,11 +269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[2].message
-      value: After learning about both of thesee individuals in a multitude of scenarios...
+      value: After learning about both of these individuals in a multitude of scenarios...
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[3].message
-      value: It has come to make a real decision, that you have visited once before,
+      value: It is time to make a choice.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[4].message
@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[7].message
-      value: Choose who dies.
+      value: Choose who lives.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath

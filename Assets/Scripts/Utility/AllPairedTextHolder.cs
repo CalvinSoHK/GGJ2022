@@ -8,8 +8,8 @@ public class AllPairedTextHolder : MonoBehaviour
 
     int index = 0;
     string[] pair1 = new string[] {
-            "Places divider at grocery checkout",
-            "Takes shoes off at home",
+            "This person places a divider at the grocery checkout",
+            "This person takes their shoes off at home",
             "Uses reusable straw",
             "Watches shows/movies with subtitles",
             "Brushes teeth after every meal",

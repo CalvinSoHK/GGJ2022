@@ -5405,7 +5405,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[5].message
-      value: Simply click on them to do so.
+      value: Do so by clicking on them. You might be surprised with what you find
+        out.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[6].message
@@ -5470,6 +5471,14 @@ PrefabInstance:
     - target: {fileID: 1200680015772622057, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: m_Name
       value: Events
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820855938577104455, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: addMeter2Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668464542916675929, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: addMeter1Value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7852565189087570890, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath

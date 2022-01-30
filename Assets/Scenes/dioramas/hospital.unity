@@ -3188,12 +3188,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[1].message
-      value: Resources and manpower are limited.
+      value: "In this next scene, \u201CHospital (beta)\u201D, only one patient will
+        be able to receive life saving treatment in time."
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[2].message
-      value: "In this next scene, \u201CHospital (beta)\u201D, only one patient will
-        be able to receive life saving treatment in time."
+      value: Resources and manpower are limited.
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[3].message
@@ -3286,6 +3286,14 @@ PrefabInstance:
     - target: {fileID: 1200680015772622057, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: m_Name
       value: Events
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820855938577104455, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: addMeter2Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668464542916675929, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: addMeter1Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852565189087570890, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath
