@@ -3312,6 +3312,38 @@ PrefabInstance:
       propertyPath: messageInfoList.Array.data[0].message
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].message
+      value: "Loading scenario, \u201CMorning Commute\u201D."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].message
+      value: Two individuals await the 8:15am bus.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].message
+      value: There is space to stand on either side of them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].message
+      value: Where do you go?
+      objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath
       value: Volumes/TransitionToBusStop

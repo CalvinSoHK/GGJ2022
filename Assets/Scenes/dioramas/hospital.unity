@@ -3281,6 +3281,39 @@ PrefabInstance:
       propertyPath: messageInfoList.Array.data[0].message
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].id
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[2].message
+      value: "Things aren\u2019t always pleasant."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[3].message
+      value: Resources and manpower are limited.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[4].message
+      value: "In this next scene, \u201CHospital (beta)\u201D, only one patient will
+        be able to receive life saving treatment in time."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200680015507307021, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[5].message
+      value: Make your selection.
+      objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath
       value: Volumes/TransitionToHospital
