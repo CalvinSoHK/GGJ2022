@@ -53,9 +53,10 @@ namespace UI.TextDisplay
             }
             else if (id.Equals(MessageQueueID.UI))
             {
-                textNextButton.SetActive(false);
+                
                 if (message.Equals("ContinueText"))
                 {
+                    textNextButton.SetActive(false);
                     ProcessNext();
                 }
             }
