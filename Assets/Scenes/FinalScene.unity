@@ -449,6 +449,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1125797575, guid: b43e2322f678e2e4aaa99cbff7f00ddd, type: 3}
+      propertyPath: grabText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125797575, guid: b43e2322f678e2e4aaa99cbff7f00ddd, type: 3}
+      propertyPath: grabDeathString
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2888287515684434643, guid: b43e2322f678e2e4aaa99cbff7f00ddd, type: 3}
       propertyPath: message
       value: Choose/Left
@@ -629,6 +637,14 @@ PrefabInstance:
     - target: {fileID: 2478177156021172182, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
       propertyPath: m_Name
       value: Character1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572968549379514007, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
+      propertyPath: grabText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572968549379514007, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
+      propertyPath: grabDeathString
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4693482913849089794, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
       propertyPath: message

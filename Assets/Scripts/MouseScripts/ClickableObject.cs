@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Utility.MessageQueue;
 
 namespace Interactable
 {
@@ -26,7 +27,13 @@ namespace Interactable
         [SerializeField]
         private QueueMessageEvent messageEvent;
 
-        private bool firstMessage = true;
+        [Tooltip("Grabs random text if true")]
+        [SerializeField]
+        private bool grabText = true;
+
+        [Tooltip("Whether it should grab dying text")]
+        [SerializeField]
+        private bool grabDeathString = false;
 
         // Start is called before the first frame update
         void Start()
@@ -61,10 +68,21 @@ namespace Interactable
 
         public void ClickObject()
         {
-            if(firstMessage)
+            if(grabText)
             {
-                firstMessage = false;
-                messageEvent.AddMessage("Dialogue", Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara));
+                grabText = false;
+                messageEvent.AddMessage(
+                    MessageQueueID.DIALOGUE, 
+                    Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara)
+                    );
+            }
+            else if (grabDeathString)
+            {
+                grabDeathString = false;
+                messageEvent.AddMessage(
+                    MessageQueueID.DIALOGUE,
+                    Singleton.Instance.GetComponent<AllPairedTextHolder>().GetDeathLine()
+                    );
             }
             OnClickEvent?.Invoke();
         }
