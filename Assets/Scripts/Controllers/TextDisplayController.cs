@@ -47,6 +47,8 @@ namespace UI.TextDisplay
         [SerializeField] //amount of time between each letter
         private float letterTimerMax = 0.05f;
 
+        private bool interactable = true;
+
         private void OnEnable()
         {
             MessageQueuesManager.MessagePopEvent += HandleMessage;
@@ -124,7 +126,6 @@ namespace UI.TextDisplay
                 letterTimer = 0;
                 textMesh.text = "";
                 dialogueBoxButton.interactable = false;
-                //textMesh.text = textQueue.Dequeue();
             }
             else
             {
@@ -160,6 +161,7 @@ namespace UI.TextDisplay
         void Update()
         {
             ProgressivellyShowText();
+            ProcessNextOnClick();
         }
 
         /// <summary>
@@ -182,6 +184,19 @@ namespace UI.TextDisplay
                         DisplayNextLetter();
                         letterTimer = 0f;
                     }
+                }
+            }
+        }
+
+        private void ProcessNextOnClick()
+        {
+            interactable = dialogueBoxButton.interactable;
+            if (interactable)
+            {
+                if (textQueue.Count > 0 && !animatingText && Input.GetMouseButtonDown(0) && textNextButton.activeInHierarchy)
+                {
+                    textNextButton.SetActive(false);
+                    ProcessNext();
                 }
             }
         }
