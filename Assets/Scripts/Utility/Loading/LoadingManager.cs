@@ -13,6 +13,9 @@ public class LoadingManager : MonoBehaviour
     float timer = 0;
     bool timerGoing = true;
 
+    [SerializeField]
+    private float loadDelay;
+
     public static string SCENELOAD_MSG_PREFIX = "SceneLoad/";
 
     // Start is called before the first frame update
@@ -34,7 +37,7 @@ public class LoadingManager : MonoBehaviour
         if (timerGoing)
         {
             timer += Time.deltaTime;
-            if (timer > 3.0f)
+            if (timer > loadDelay)
             {
                 StartCoroutine(LoadAsyncOperation());
                 timerGoing = false;

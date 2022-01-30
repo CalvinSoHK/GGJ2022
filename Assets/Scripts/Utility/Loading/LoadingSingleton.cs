@@ -6,7 +6,7 @@ public class LoadingSingleton : MonoBehaviour
 {
 
     //public static LoadingSingleton Loading_Instance = new LoadingSingleton();
-    int nextSceneToLoad = 1;
+    public int nextSceneToLoad = 1;
 
     private void OnEnable()
     {
