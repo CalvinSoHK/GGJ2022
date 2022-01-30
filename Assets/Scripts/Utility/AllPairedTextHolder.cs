@@ -67,6 +67,10 @@ public class AllPairedTextHolder : MonoBehaviour
             "Interacts with stranger’s pets before asking for permission",
             "Buys NFT",
         };
+
+    List<string> chara1Lines = new List<string>();
+    List<string> chara2Lines = new List<string>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,10 +87,12 @@ public class AllPairedTextHolder : MonoBehaviour
     {
         if(whichChara)
         {
+            chara1Lines.Add(pair1[index]);
             return pair1[index];
         }
         else
         {
+            chara2Lines.Add(pair2[index]);
             return pair2[index];
         }
     }
@@ -100,4 +106,27 @@ public class AllPairedTextHolder : MonoBehaviour
     {
         return index;
     }
+
+    public List<string> getCharacterLines(bool whichChara)
+    {
+        if(whichChara)
+        {
+            return chara1Lines;
+        }
+        else
+        {
+            return chara2Lines;
+        }
+    }
+
+    public List<string> getFirstCharaLines()
+    {
+        return chara1Lines;
+    }
+
+    public List<string> getSecondCharaLines()
+    {
+        return chara2Lines;
+    }
+
 }
