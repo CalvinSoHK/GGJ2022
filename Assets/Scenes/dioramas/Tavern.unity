@@ -897,6 +897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 915662225026095349, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: messageInfoList.Array.data[0].message
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath
       value: Volumes/TransitionTavern
@@ -948,6 +952,10 @@ PrefabInstance:
     - target: {fileID: 1200680015772622057, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: m_Name
       value: Events
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852565189087570890, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
+      propertyPath: targetProfilePath
+      value: Volumes/TransitionToHospital
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}

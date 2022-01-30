@@ -1990,6 +1990,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8545267401061988889, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4a985d9f2ecca448e3cfc53402423d, type: 3}
 --- !u!1 &1465126837
@@ -2628,18 +2632,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 286741259, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
-      propertyPath: m_Intensity
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 286741259, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
-      propertyPath: m_ShapeLightParametricRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478177156021172160, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
-      propertyPath: targetPos.z
-      value: -11.13
-      objectReference: {fileID: 0}
     - target: {fileID: 2478177156021172173, guid: 4b7265df28b649a4cb8c6deeee4053cd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2794,7 +2786,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 915662225026095349, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: messageInfoList.Array.data[0].message
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1200680015507307022, guid: 8ab8fcf78748e384e8abbef343af97ff, type: 3}
       propertyPath: targetProfilePath

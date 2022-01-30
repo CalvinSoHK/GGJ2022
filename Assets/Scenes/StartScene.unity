@@ -257,15 +257,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9251a5f3848e1ea48842bd4ddbe804b5, type: 2}
+  m_sharedMaterial: {fileID: 3148534948635956184, guid: 9251a5f3848e1ea48842bd4ddbe804b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.15
+  m_fontSize: 59
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageInfoList:
   - id: SceneLoad
-    message: 3
+    message: 2
 --- !u!1 &1200357485
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 1232581806}
   - component: {fileID: 1232581809}
   - component: {fileID: 1232581810}
+  - component: {fileID: 1232581811}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -807,8 +808,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -850,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03674c7a62171324db4ce4da28a563cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetProfilePath: Volumes/TransitionToOffice
+  targetProfilePath: Volumes/TransitionToTrolley
   targetWeight: 1
   smoothTime: 0.5
   endEvent:
@@ -869,6 +870,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   AddToQueueMessageEvent: 1
+--- !u!114 &1232581811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232581804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7489cdff8f58354c921ddf58ba559e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetImg: {fileID: 1232581807}
+  targetText: {fileID: 1909020714}
+  defaultSprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
+  hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
+  defaultTextColor: {fileID: 11400000, guid: f6b26b7b07e899545a458580c15d0f27, type: 2}
+  hoverTextColor: {fileID: 11400000, guid: b7aa8dace7cecab40835f5c1a46e7ca6, type: 2}
 --- !u!1 &1500666166
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +901,7 @@ GameObject:
   - component: {fileID: 1500666169}
   - component: {fileID: 1500666168}
   - component: {fileID: 1500666171}
+  - component: {fileID: 1500666172}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -985,8 +1005,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1018,6 +1038,24 @@ MonoBehaviour:
   messageInfoList:
   - id: GameState
     message: EXIT
+--- !u!114 &1500666172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500666166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7489cdff8f58354c921ddf58ba559e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetImg: {fileID: 1500666169}
+  targetText: {fileID: 181660448}
+  defaultSprite: {fileID: 21300000, guid: a10a84e55ff8dd64daf5c9aea819cd7d, type: 3}
+  hoverSprite: {fileID: 21300000, guid: f2858cddeaae1b348b5b861a0bd8fa3e, type: 3}
+  defaultTextColor: {fileID: 11400000, guid: f6b26b7b07e899545a458580c15d0f27, type: 2}
+  hoverTextColor: {fileID: 11400000, guid: b7aa8dace7cecab40835f5c1a46e7ca6, type: 2}
 --- !u!1 &1552327252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,15 +1304,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9251a5f3848e1ea48842bd4ddbe804b5, type: 2}
+  m_sharedMaterial: {fileID: 3148534948635956184, guid: 9251a5f3848e1ea48842bd4ddbe804b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1291,7 +1329,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.15
+  m_fontSize: 59
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
