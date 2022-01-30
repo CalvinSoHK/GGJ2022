@@ -43,7 +43,7 @@ public class BillboardController : MonoBehaviour
 
         foreach (string sentence in lines)
         {
-            outputString += ">" + sentence + "\n";
+            outputString += ">" + sentence + "\n\n";
         }
 
         textBox.text = outputString;
