@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MockupScene.unity
     guid: 91b7b6506fdb7d14a89c8ce2f485cc5b
+  - enabled: 1
+    path: Assets/Scenes/dioramas/OfficePromotion.unity
+    guid: db78cb9eb4b3357499b7b95ed6fa454f
+  - enabled: 1
+    path: Assets/Scenes/dioramas/Tavern.unity
+    guid: ab450f4d8f0abd84b943cc6fb456eb28
   m_configObjects: {}
