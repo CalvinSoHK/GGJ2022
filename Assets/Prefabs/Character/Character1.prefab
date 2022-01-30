@@ -410,6 +410,7 @@ MonoBehaviour:
         m_CallState: 2
   outline: {fileID: 2478177156021172169}
   outlineWidth: 7
+  firstChara: 1
 --- !u!114 &2478177156021172172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,9 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3186ceccfd652143bf3592e83f32236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageInfoList:
-  - id: Dialogue
-    message: Filler text
+  messageInfoList: []
 --- !u!114 &2478177156021172161
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1510,6 +1510,7 @@ GameObject:
   - component: {fileID: 5218918413585249606}
   - component: {fileID: 5218918413585249607}
   - component: {fileID: 1596626468102939907}
+  - component: {fileID: 353488916573591121}
   m_Layer: 0
   m_Name: SingletonToolbox
   m_TagString: Untagged
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92e63cb083210d4d9075953c5497cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneToLoad: 1
 --- !u!114 &5218918413585249607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,6 +1612,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choice1Count: 0
   choice2Count: 0
+--- !u!114 &353488916573591121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218918413585249613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761ed41073baa70438e9ceb6dd708ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5218918413634340906
 GameObject:
   m_ObjectHideFlags: 0

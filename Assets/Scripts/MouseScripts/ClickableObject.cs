@@ -1,3 +1,4 @@
+using Event;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,18 @@ namespace Interactable
         [SerializeField]
         private float outlineWidth;
 
+        [SerializeField]
+        private bool firstChara = false;
+
         // Start is called before the first frame update
         void Start()
         {
             SetupOutline();
+            if(firstChara)
+            {
+                Singleton.Instance.GetComponent<AllPairedTextHolder>().setNewIndex();
+                
+            }
         }
 
         /// <summary>
@@ -44,6 +53,7 @@ namespace Interactable
 
         public void ClickObject()
         {
+            GetComponent<QueueMessageEvent>().AddMessage("Dialogue", Singleton.Instance.GetComponent<AllPairedTextHolder>().returnNeededString(firstChara));
             OnClickEvent?.Invoke();
         }
     }
