@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility.MessageQueue;
 
 public class AllPairedTextHolder : MonoBehaviour
 {
@@ -68,20 +69,27 @@ public class AllPairedTextHolder : MonoBehaviour
             "Buys NFT",
         };
 
+    private List<string> finalWords = new List<string>
+    {
+        "I have my whole life ahead of me...",
+        "Please I have a family!",
+        "Do you seriously think the other guy is better than me?",
+        "... Please ...",
+        "Well I guess this is the end.",
+        "I die with honor.",
+        "I have no regrets.",
+        "Think of my pets! How are they going to go on?",
+        "I'll pay you any amount if you pick me!",
+        "I'll have you know I'm well connected. I could help you out.",
+        "You wouldn't actually pick... that guy would you?",
+        "Sweetie, you should pick the other guy!",
+        "Pick me and I'll split my NFT profits with you!"
+    };
+
+    private List<string> curFinalWords = new List<string>();
+
     List<string> chara1Lines = new List<string>();
     List<string> chara2Lines = new List<string>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public string returnNeededString(bool whichChara)
     {
@@ -129,4 +137,49 @@ public class AllPairedTextHolder : MonoBehaviour
         return chara2Lines;
     }
 
+    public string GetDeathLine()
+    {
+        int index = Random.Range(0, curFinalWords.Count);
+        string returnVal = curFinalWords[index];
+        curFinalWords.RemoveAt(index);
+        return returnVal;
+    }
+
+    public void ResetDeathLines()
+    {
+        curFinalWords.Clear();
+        foreach(string words in finalWords)
+        {
+            curFinalWords.Add(words);
+        }
+    }
+
+    /// <summary>
+    /// Helps with debugging
+    /// </summary>
+    private void Awake()
+    {
+        ResetDeathLines();
+    }
+
+    private void OnEnable()
+    {
+        MessageQueuesManager.MessagePopEvent += HandleMessage;
+    }
+
+    private void OnDisable()
+    {
+        MessageQueuesManager.MessagePopEvent -= HandleMessage;
+    }
+
+    private void HandleMessage(string id, string msg)
+    {
+        if(id.Equals(MessageQueueID.GAMESTATE))
+        {
+            if (msg.Equals("Start"))
+            {
+                ResetDeathLines();
+            }
+        }
+    }
 }
